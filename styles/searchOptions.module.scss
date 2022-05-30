@@ -1,0 +1,56 @@
+.options {
+    position: absolute;
+    z-index: 40;
+    background: #fff;
+    border-radius: 10px;
+    width: calc(150px + 9vw);
+    top: 50px;
+    max-height: 70vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #202125;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #cae962;
+        border-radius: 20px;
+        border: 4px solid #202125;
+        min-height: 60px;
+
+        &:hover {
+            background-color: #a6cd25;
+        }
+    }
+
+    &__items {
+        padding: 0 20px;
+    }
+
+    &__item {
+        margin-bottom: 15px;
+        font-size: 16px;
+        transition: 0.2s;
+        color: #202125;
+        cursor: pointer;
+
+        &:hover {
+            color: #d2f070;
+            transition: 0.2s;
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .options {
+        right: 50px;
+    }
+}
