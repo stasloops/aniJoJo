@@ -31,6 +31,7 @@
     &__form {
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     &__input {
@@ -74,20 +75,18 @@
         }
 
         &__logo {
-            font-size: calc(10px + 4vw);
+            font-size: calc(5px + 5vw);
         }
 
         &__form {
-            display: flex;
             justify-content: end;
-            width: 100%;
+
         }
 
         &__input {
-            transition: 0.4s;
-            position: absolute;
             right: 50px;
             top: 11px;
+            width: calc(130px + 11vw);
         }
     }
 }

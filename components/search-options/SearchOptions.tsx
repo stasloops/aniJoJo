@@ -37,11 +37,9 @@ const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue }) => {
       setValue('')
     }
   }
-  setTimeout(() => {
-    console.log('render');
-  })
 
-  return (
+  return (<>
+    <div className={style.options__black__background}></div>
     <div style={{ display: options.length === 0 ? 'none' : value ? '' : 'none' }} className={style.options}>
       <ul className={style.options__items}>
         {
@@ -53,7 +51,7 @@ const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue }) => {
         }
       </ul>
     </div>
-  )
+  </>)
 }
 
 export default SearchOptions

@@ -3,8 +3,8 @@
     z-index: 40;
     background: #fff;
     border-radius: 10px;
-    width: calc(150px + 9vw);
-    top: 50px;
+    width: 101%;
+    top: 40px;
     max-height: 70vh;
     overflow: auto;
 
@@ -25,7 +25,7 @@
     }
 
     &__items {
-        padding: 0 20px;
+        padding: 0 0 0 15px;
     }
 
     &__item {
@@ -43,11 +43,5 @@
         &:last-child {
             margin-bottom: 0px;
         }
-    }
-}
-
-@media screen and (max-width: 470px) {
-    .options {
-        right: 50px;
     }
 }

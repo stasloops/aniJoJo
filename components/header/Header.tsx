@@ -1,10 +1,10 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { memo, useState } from "react"
+import { FC, memo, useState } from "react"
 import style from '../../styles/header.module.scss'
 import SearchOptions from "../search-options/SearchOptions"
 
-const Header = () => {
+const Header: FC = () => {
     const [value, setValue] = useState<string>('')
     const router = useRouter()
 
@@ -27,7 +27,7 @@ const Header = () => {
                     </Link>
                     <form className={style.header__form}>
                         <input className={style.header__input} value={value} onChange={e => setValue(e.target.value)} placeholder='Поиск аниме' />
-                        <SearchOptions setValue={setValue} value={value}/>
+                        <SearchOptions setValue={setValue} value={value} />
                         <button onClick={onNavigateSearch} className={style.header__button}><img src='/loop.svg' /></button>
                     </form>
                 </div>
