@@ -22,7 +22,7 @@ const Header: FC = () => {
                 <div className={style.header__inner}>
                     <Link href={`/`}>
                         <a className={style.header__logo}>
-                            <span className={style.fff}>Ani</span>JoJoJo
+                            <span className={style.fff}>Ani</span>JoJoJ00
                         </a>
                     </Link>
                     <form className={style.header__form}>
