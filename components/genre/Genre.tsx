@@ -1,5 +1,4 @@
 import { FC, useState } from 'react'
-
 import style from '../../styles/genre.module.scss'
 
 type GenreItemProps = {

@@ -1,8 +1,13 @@
+@font-face {
+  font-family: 'MontserratZ';
+  src: url('../public/Montserrat-VariableFont_wght.ttf');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'MontserratZ';
   background-color: #202125;
   width: 100%;
 }
