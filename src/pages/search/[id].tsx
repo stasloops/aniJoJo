@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import Layout from '../../layout/Layout'
+import { URL_SEARCH } from '../../request'
 import style from '../../styles/search.module.scss'
 import { AnimeProps, KodikProps } from '../../type/type'
 
@@ -12,7 +13,7 @@ const Search = () => {
   const { query } = useRouter()
 
   const fetchSearch = async () => {
-    const response = await axios.get<KodikProps>(`https://kodikapi.com/search?token=30ef128890b06e03700a3628b91c87c2&title=${query.id}&types=anime-serial,anime&with_material_data=true`)
+    const response = await axios.get<KodikProps>(`${URL_SEARCH}&title=${query.id}&types=anime-serial,anime&with_material_data=true`)
     setSearch(response.data.results)
   }
   

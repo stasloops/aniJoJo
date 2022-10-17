@@ -5,6 +5,7 @@ import Layout from "../layout/Layout"
 import Filters from "../components/filters/Filters"
 import { AnimeProps, KodikProps, ValueProps } from "../type/type"
 import AnimeCard from "../components/anime-card/AnimeCard"
+import { URL_LIST } from '../request'
 
 const App = () => {
   const [fetching, setFetching] = useState<boolean>(true)
@@ -42,7 +43,7 @@ const App = () => {
 
   const fetchAnime = async () => {
     setLoading(true)
-    const res = await axios.get<KodikProps>(pages?.next_page === undefined ? `https://kodikapi.com/list?token=30ef128890b06e03700a3628b91c87c2&with_material_data=true&translation_id=609,739,2068,557,827&limit=45&sort=${params.valueSort}&anime_genres=${params.valueGenres}&anime_kind=${params.valueType}${params.valueYear.length === 0 ? '' : '&year=' + params.valueYear}` : `${pages.next_page}&with_material_data=true&translation_id=609,739,2068,557,827&limit=45&sort=${params.valueSort}&anime_genres=${params.valueGenres}&anime_kind=${params.valueType}${params.valueYear.length === 0 ? '' : '&year=' + params.valueYear}`)
+    const res = await axios.get<KodikProps>(pages?.next_page === undefined ? `${URL_LIST}&with_material_data=true&translation_id=609,739,2068,557,827&limit=45&sort=${params.valueSort}&anime_genres=${params.valueGenres}&anime_kind=${params.valueType}${params.valueYear.length === 0 ? '' : '&year=' + params.valueYear}` : `${pages.next_page}&with_material_data=true&translation_id=609,739,2068,557,827&limit=45&sort=${params.valueSort}&anime_genres=${params.valueGenres}&anime_kind=${params.valueType}${params.valueYear.length === 0 ? '' : '&year=' + params.valueYear}`)
     setPages(res.data)
     setAnime([...anime, ...res.data.results])
     setFetching(false)
@@ -95,13 +96,14 @@ const App = () => {
       }, 0)
     }
   }
+// console.log(newAnime);
 
   return (<>
     <Layout title="Смотреть Аниме онлайн бесплатно в хорошем качестве" >
       <main className={style.list}>
         <img onClick={onScroll} style={{ display: opacity === false ? 'none' : '' }} className={style.list__arrow} src='/arrow.svg' alt='scroll to top' />
         <div className={style.list__container}>
-          <img className={style.list__jojo__img} src='/img/jojo4.jpg' />
+          {/* <img className={style.list__jojo__img} src='/img/jojo4.jpg' /> */}
           <div className={style.list__inner}>
             <h1 className={style.list__title}>Список аниме</h1>
             <Filters setParams={setParams} />
@@ -135,7 +137,7 @@ const App = () => {
                     </div>
             }
           </div>
-          <img className={style.list__dio__img} src='/img/dio4.jpg' />
+          {/* <img className={style.list__dio__img} src='/img/dio4.jpg' /> */}
         </div>
       </main>
     </Layout>

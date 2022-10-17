@@ -20,12 +20,41 @@
         padding: 0 22px;
     }
 
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
     &__logo {
         font-size: 28px;
         color: #cae962;
         cursor: pointer;
         font-weight: 400;
+        margin-right: 30px;
+    }
 
+    &__nav {
+        &_item {
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+    }
+
+    &__nav_item:hover &__svg {
+        color: #cae962;
+        transition: 0.4s;
+    }
+
+    &__svg {
+        display: inline-block;
+        font-size: 16px;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+        cursor: pointer;
+        color: #889461;
+        transition: 0.4s;
     }
 
     &__form {

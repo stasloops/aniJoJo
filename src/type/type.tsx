@@ -11,6 +11,7 @@ type MaterialDataProps = {
 
 export type AnimeProps = {
     id: string
+    imdb_id: string
     last_season: number
     link: string
     worldart_link: string

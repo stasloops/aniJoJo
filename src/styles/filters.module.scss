@@ -133,6 +133,19 @@
         &__genre {
             height: 200px;
             overflow: auto;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+        
+            &::-webkit-scrollbar-track {  
+                border-radius: 0 10px 10px 0;   
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background-color: #202125;
+                border-radius: 20px;
+                min-height: 60px;
+            }
         }
 
         &__left {

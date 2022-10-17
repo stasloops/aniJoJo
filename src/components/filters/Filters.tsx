@@ -47,6 +47,7 @@ const Filters: FC<FiltersProps> = ({ setParams }) => {
     const changeValueYear = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setValue({ ...value, valueYear: e.target.value })
     }
+console.log(genre);
 
     return (
         <div className={style.filters}>
@@ -109,7 +110,7 @@ const Filters: FC<FiltersProps> = ({ setParams }) => {
                     </label>
                 </form>
             </div>
-        </div >
+        </div>
     )
 }
 
