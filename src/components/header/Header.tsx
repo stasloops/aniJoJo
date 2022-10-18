@@ -28,7 +28,7 @@ const Header: FC = () => {
                                 <span className={style.fff}>Ani</span>JoJo
                             </a>
                         </Link>
-                        <nav>
+                        <nav className={style.header__nav}>
                             <Link href={`/favorites`}>
                                 <a className={style.header__nav_item}>
                                     <span style={{color: router.asPath === '/favorites' ? '#cae962' : ''}} className={style.header__svg}>{svg.favorite}</span>

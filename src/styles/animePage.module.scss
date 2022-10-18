@@ -156,7 +156,7 @@
             height: 440px;
         }
 
-        &__img {
+        &__left {
             width: 27%;
         }
 
@@ -176,14 +176,18 @@
             height: 300px;
         }
 
-        &__img {
+        &__left {
             width: 50%;
-            height: 350px;
             margin-bottom: 10px;
+        }
+
+        &__img {
+            height: 350px;
         }
 
         &__content {
             width: 100%;
+            margin-top: 20px;
         }
     }
 }
@@ -198,7 +202,7 @@
             height: 235px;
         }
 
-        &__img {
+        &__left {
             width: 60%;
         }
     }
@@ -214,7 +218,7 @@
             height: 200px;
         }
 
-        &__img {
+        &__left {
             width: 70%;
         }
     }
@@ -226,17 +230,8 @@
             justify-content: center;
         }
 
-        &__img {
+        &__left {
             width: calc(200px + 10vw);
-        }
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .anime {
-        &__img {
-            width: 80%;
-            height: 300px;
         }
     }
 }
