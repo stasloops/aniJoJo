@@ -32,3 +32,10 @@ export type ValueProps = {
     valueType: string
     valueYear: string
 }
+
+export type User = {
+    username: string
+    id: string
+    logo: string
+    status: string
+}

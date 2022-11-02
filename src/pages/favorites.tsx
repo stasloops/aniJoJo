@@ -2,22 +2,10 @@ import React, { useEffect, useState } from 'react'
 import style from '../styles/favorites.module.scss'
 import Link from 'next/link'
 import Layout from '../layout/Layout'
-import { AnimeProps, KodikProps } from '../type/type'
+import { AnimeProps } from '../type/type'
 
 const Favorites = () => {
   const [favoriteAnime, setFavoriteAnime] = useState<AnimeProps[]>([])
- 
-  function sum(num:number):any{
-    if (num === 0) {
-        return 0
-    } else {
-        return num + sum(--num)
-    }
-}
- 
-sum(4);     //10
-
-
 
   useEffect(() => {
     const favorites: any = localStorage.getItem('favorite')

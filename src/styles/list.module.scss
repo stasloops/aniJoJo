@@ -5,6 +5,7 @@
     background-color: #202125;
     min-height: 140vh;
     padding-bottom: 70px;
+
     &__arrow {
         width: 60px;
         position: fixed;
@@ -40,7 +41,7 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
-        border: 1px solid #cae962;
+        // border: 1px solid #cae962;
         border-width: 2px 2px;
         border-color: #cae962;
         background-color: #202125;

@@ -10,7 +10,7 @@ import { URL_LIST } from '../request'
 const App = () => {
   const [fetching, setFetching] = useState<boolean>(true)
   const [loading, setLoading] = useState<boolean>(false)
-  const [pages, setPages] = useState<KodikProps | undefined >(undefined)
+  const [pages, setPages] = useState<KodikProps | undefined>(undefined)
   const [anime, setAnime] = useState<AnimeProps[]>([])
   const [newAnime, setNewAnime] = useState<AnimeProps[]>([])
   const [params, setParams] = useState<ValueProps>({ valueSort: 'shikimori_rating', valueGenres: '', valueType: 'tv', valueYear: '' })
@@ -51,7 +51,7 @@ const App = () => {
     setLoading(false)
   }
 
-  useEffect(() => {   
+  useEffect(() => {
     if (fetching === true && count !== totalCount && totalCount !== 0) {
       fetchAnime()
     }
@@ -77,8 +77,8 @@ const App = () => {
   }, [anime])
 
   useEffect(() => {
-    if(pages?.total){
-    setTotalCount(Math.ceil(pages.total / 45))
+    if (pages?.total) {
+      setTotalCount(Math.ceil(pages.total / 45))
     }
   }, [pages?.total])
 
@@ -86,7 +86,7 @@ const App = () => {
     window.scrollTo(0, 0)
   }
 
-  const fetchTrue = () => {    
+  const fetchTrue = () => {
     if (fetching === false) {
       setFetching(true)
     } else {
@@ -96,7 +96,6 @@ const App = () => {
       }, 0)
     }
   }
-// console.log(newAnime);
 
   return (<>
     <Layout title="Смотреть Аниме онлайн бесплатно в хорошем качестве" >
@@ -111,7 +110,7 @@ const App = () => {
               <div className={style.list__cards}>
                 {
                   newAnime.map((item, id) => (
-                    <AnimeCard key={`${item.id}-${id}`} item={item} id={id}/>
+                    <AnimeCard key={`${item.id}-${id}`} item={item} id={id} />
                   ))
                 }
               </div>

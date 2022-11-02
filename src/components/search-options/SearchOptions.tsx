@@ -7,9 +7,10 @@ import { AnimeProps, KodikProps } from '../../type/type'
 type SearchOptionsProps = {
   value: string
   setValue: (value: string) => void
+  setIsMobileInput: (value: boolean) => void
 }
 
-const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue }) => {
+const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue, setIsMobileInput }) => {
   const [response, setResponse] = useState<AnimeProps[]>([])
   const [options, setOptions] = useState<any[]>([])
   const router = useRouter()
@@ -31,10 +32,12 @@ const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue }) => {
     setOptions([...addMap.values()])
   }, [response])
 
+
   const onNavigateSearch = (option: React.MouseEvent<HTMLLIElement>) => {
     if (value.length > 0) {
       router.push(`/search/${option}`)
       setValue('')
+      setIsMobileInput(false)
     }
   }
 
