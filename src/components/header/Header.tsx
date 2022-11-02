@@ -92,7 +92,7 @@ const Header: FC = () => {
                             <SearchOptions setIsMobileInput={setIsMobileInput} setValue={setValue} value={value} />
                             <button onClick={onNavigateSearch} className={style.header__button}><img src='/loop.svg' /></button>
                         </div>
-                        <button style={{right: isMobileInput ? '10px' : ''}} onClick={isMobileInput ? onNavigateSearch : (e) => openIsMobileInput(e)} className={style.header__button_mobile}><img src='/loop.svg' /></button>
+                        <button style={{right: isMobileInput ? '10px' :  auth.user?.username ? '' : '120px'}} onClick={isMobileInput ? onNavigateSearch : (e) => openIsMobileInput(e)} className={style.header__button_mobile}><img src='/loop.svg' /></button>
                     </form>
                     <div className={style.header__auth}>
                         {
