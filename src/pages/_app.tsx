@@ -5,7 +5,7 @@ import '../styles/globals.scss'
 import { store } from '../store/index';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:3444/graphql',
+  uri: 'https://anijojo.herokuapp.com/graphql',
   cache: new InMemoryCache
 })
 
