@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { FC, useEffect, useState } from 'react'
 import style from '../../styles/searchOptions.module.scss'
@@ -33,9 +34,8 @@ const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue, setIsMobileInp
   }, [response])
 
 
-  const onNavigateSearch = (option: React.MouseEvent<HTMLLIElement>) => {
+  const onNavigateSearch = () => {
     if (value.length > 0) {
-      router.push(`/search/${option}`)
       setValue('')
       setIsMobileInput(false)
     }
@@ -47,8 +47,15 @@ const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue, setIsMobileInp
       <ul className={style.options__items}>
         {
           options?.map((item, id) => (
-            <li onClick={() => onNavigateSearch(item.material_data?.anime_title)} key={id} className={style.options__item}>
-              {item.material_data?.anime_title}
+            <li onClick={onNavigateSearch} key={id} className={style.options__item}>
+              <Link key={`${item?.id}-${id}`} href={{
+                pathname: `/anime/${item?.material_data?.title_en}`,
+                query: { param: `${item?.id}` },
+              }}>
+                <a>
+                  {item.material_data?.anime_title}
+                </a>
+              </Link>
             </li>
           ))
         }
