@@ -44,22 +44,25 @@ const SearchOptions: FC<SearchOptionsProps> = ({ value, setValue, setIsMobileInp
   return (<>
     <div className={style.options__black__background}></div>
     <div style={{ display: options.length === 0 ? 'none' : value ? '' : 'none' }} className={style.options}>
-      <ul className={style.options__items}>
+      <div className={style.options__items}>
         {
           options?.map((item, id) => (
-            <li onClick={onNavigateSearch} key={id} className={style.options__item}>
-              <Link key={`${item?.id}-${id}`} href={{
+            <Link
+              key={`${item?.id}-${id}`}
+              href={{
                 pathname: `/anime/${item?.material_data?.title_en}`,
                 query: { param: `${item?.id}` },
-              }}>
-                <a>
-                  {item.material_data?.anime_title}
-                </a>
-              </Link>
-            </li>
+              }}
+              onClick={onNavigateSearch}
+              
+            >
+              <a className={style.options__item}>
+                {item.material_data?.anime_title}
+              </a>
+            </Link>
           ))
         }
-      </ul>
+      </div>
     </div>
   </>)
 }
