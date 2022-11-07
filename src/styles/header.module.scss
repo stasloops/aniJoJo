@@ -44,6 +44,9 @@
         align-items: center;
         width: 33%;
 
+        @media screen and (max-width: 600px) {
+           justify-content: end;
+        }
 
         &_box {
             display: flex;
@@ -64,6 +67,10 @@
         width: calc(150px + 9vw);
         outline: 0;
         
+        @media screen and (max-width: 550px) {
+            width: calc(110px + 9vw);
+
+        }
 
         @media screen and (max-width: 470px) {
             min-width: 100vw;

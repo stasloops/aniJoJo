@@ -39,7 +39,6 @@
 
     &__item {
         display: block;
-        margin-bottom: 15px;
         font-size: 15px;
         transition: 0.2s;
         color: #202125;
@@ -50,8 +49,13 @@
             transition: 0.2s;
         }
 
-        &:last-child {
-            margin-bottom: 0px;
+        &_box {
+            margin-bottom: 15px;
+            display: block;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
         }
     }
 }

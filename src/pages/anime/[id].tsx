@@ -23,8 +23,7 @@ const AnimePage: FC<AnimePageProps> = ({ anime }) => {
         const res = await axios.get(`https://kodikapi.com/search?token=30ef128890b06e03700a3628b91c87c2&id=${query.param}&with_material_data=true`)
         setAnimeLink(res.data.results[0].link)
     }
-    console.log(anime);
-
+    
     useEffect(() => {
         if (query) {
             fetchLink()
