@@ -39,7 +39,7 @@ const Favorites = () => {
                     </Link>
                   ))
                   :
-                  <div>Здесь пока ничего нет.</div>
+                  <div className={style.favorite__none}>Здесь пока ничего нет.</div>
               }
             </div>
           </div>

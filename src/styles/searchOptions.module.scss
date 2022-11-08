@@ -34,10 +34,12 @@
     }
 
     &__items {
-        padding: 15px 0 15px 15px;
+        // padding: 15px 0 15px 15px;
     }
 
     &__item {
+        padding: 10px 0;
+        margin-left: 15px;
         display: block;
         font-size: 15px;
         transition: 0.2s;
@@ -45,16 +47,19 @@
         cursor: pointer;
 
         &:hover {
-            color: #d2f070;
+            color: #96c10a;
             transition: 0.2s;
         }
 
         &_box {
-            margin-bottom: 15px;
             display: block;
 
+            &:hover {
+                background-color: rgb(232, 232, 232);
+            }
+
             &:last-child {
-                margin-bottom: 0px;
+                padding-bottom: 0px;
             }
         }
     }
